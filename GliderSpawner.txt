@@ -1,0 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GliderSpawner : MonoBehaviour
+{
+    [SerializeField]
+    private Glider gliderPrefab;
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Glider newGlider = Instantiate(gliderPrefab);
+            newGlider.transform.position = new Vector2(Random.Range(-2f, 2f), Random.Range(-2f, 2f));
+        }
+    }
+}
